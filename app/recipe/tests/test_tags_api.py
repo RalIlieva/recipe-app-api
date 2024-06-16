@@ -17,8 +17,8 @@ TAGS_URL = reverse('recipe:tag-list')
 
 
 def detail_url(tag_id):
-    """Create and return a tag detail url"""
-    return reverse('recipe:tag-detail', args=['tag_id'])
+    """Create and return a tag detail URL."""
+    return reverse('recipe:tag-detail', args=[tag_id])
 
 
 def create_user(email='user@example.com', password='testpass123'):
@@ -61,7 +61,7 @@ class PrivateTagsApiTests(TestCase):
 
     def test_tags_limited_to_user(self):
         """Test list of tags is limited to authenticated user."""
-        user2 = create_user(email='user2@example.com', password='testpass123')
+        user2 = create_user(email='user2@example.com')
         Tag.objects.create(user=user2, name='Fruity')
         tag = Tag.objects.create(user=self.user, name='Comfort Food')
 
