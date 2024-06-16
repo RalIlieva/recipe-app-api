@@ -221,7 +221,7 @@ class PrivaterecipeApiTests(TestCase):
         payload = {
             'title': 'Pongal',
             'time_minutes': 60,
-            'price': Decimal('24')
+            'price': Decimal('24'),
             'tags': [{'name': 'Indian'}, {'name': 'Breakfast'}]
         }
         res = self.client.post(RECIPES_URL, payload, format='json')
