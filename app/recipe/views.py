@@ -47,7 +47,7 @@ class RecipeViewSet(viewsets.ModelViewSet):
     def upload_image(self, request, pk=None):
         """Upload an image to recipe."""
         recipe = self.get_object()
-        serializer = self.get_serialier(recipe, data=request.data)
+        serializer = self.get_serializer(recipe, data=request.data)
 
         if serializer.is_valid():
             serializer.save()
