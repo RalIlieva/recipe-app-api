@@ -100,7 +100,7 @@ class PrivateTagsApiTests(TestCase):
         tags = Tag.objects.filter(user=self.user)
         self.assertFalse(tags.exists())
 
-    def test_filter_tags_assinged_to_recipes(self):
+    def test_filter_tags_assigned_to_recipes(self):
         """Test listing tags to those assigned to recipe."""
         tag1 = Tag.objects.create(user=self.user, name='Breakfast')
         tag2 = Tag.objects.create(user=self.user, name='Lunch')
